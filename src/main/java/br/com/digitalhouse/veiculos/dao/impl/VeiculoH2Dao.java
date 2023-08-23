@@ -89,7 +89,7 @@ public class VeiculoH2Dao implements IDao<Veiculo> {
             List<Veiculo> veiculos = new ArrayList<>();
             while (resultSet.next()) {
                 Veiculo veiculo = getVeiculoByResultSet(resultSet);
-                log.info("veiculo encontrado com o id: " + veiculo.getId() + " foi encontrado");
+                log.info("veiculo com o id: " + veiculo.getId() + " foi encontrado");
                 veiculos.add(veiculo);
             }
             return veiculos;

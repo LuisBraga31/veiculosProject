@@ -10,7 +10,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("veiculos")
+@RequestMapping("listaveiculos")
 public class VeiculoController {
 
     private VeiculoService veiculoService;
