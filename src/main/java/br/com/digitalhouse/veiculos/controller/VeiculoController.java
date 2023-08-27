@@ -4,6 +4,7 @@ import br.com.digitalhouse.veiculos.model.Veiculo;
 import br.com.digitalhouse.veiculos.service.VeiculoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,9 +29,14 @@ public class VeiculoController {
     }
 
     @GetMapping("{id}")
-    public Veiculo buscarVeiculoPorId(@PathVariable Integer id) {
+    public ResponseEntity<Veiculo> buscarVeiculoPorId(@PathVariable Integer id) {
         log.info("chamando buscar veiculo por id: " + id);
-        return veiculoService.buscarVeiculoPorId(id);
+        try {
+            return ResponseEntity.ok(veiculoService.buscarVeiculoPorId(id));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+
     }
 
     @GetMapping

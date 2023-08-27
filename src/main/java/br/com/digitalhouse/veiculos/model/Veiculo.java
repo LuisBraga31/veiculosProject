@@ -9,7 +9,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Veiculo implements Serializable {
+public class Veiculo
+{
 
     private Integer id;
     private String marca;
